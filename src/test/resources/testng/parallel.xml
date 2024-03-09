@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Main suite" parallel="methods" thread-count="2">
+    <test name="Smoke test">
+        <classes>
+            <class name="testng.AUnitTest"/>
+            <class name="testng.CalcTest"/>
+            <class name="testng.DependencyTest"/>
+        </classes>
+    </test>
+
+    <test name="Regression test">
+        <classes>
+            <class name="testng.BUnitTest">
+                <methods>
+                    <exclude name="archTest1">
+
+                    </exclude>
+                </methods>
+            </class>
+            <class name="testng.CalcTest"/>
+        </classes>
+    </test>
+
+</suite>
